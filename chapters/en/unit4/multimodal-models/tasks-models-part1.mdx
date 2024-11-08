@@ -74,7 +74,7 @@ inputs = processor(
 predictions = model.generate(**inputs, max_new_tokens=512)
 print(processor.decode(predictions[0], skip_special_tokens=True))
 ```
-- **VLIT**: It is a Vision-and-Language Transformer (ViLT) model, utilizing a transformer architecture without convolutions or region supervision, fine-tuned on the VQAv2 dataset for answering natural language questions about images. The base ViLT model boasts a large architecture (B32 size) and leverages joint image and text training, making it effective for various vision-language tasks, particularly VQA, achieving competitive performance. You can use VLIT in HuggingFace as follows:
+- **ViLT**: It is a Vision-and-Language Transformer (ViLT) model, utilizing a transformer architecture without convolutions or region supervision, fine-tuned on the VQAv2 dataset for answering natural language questions about images. The base ViLT model boasts a large architecture (B32 size) and leverages joint image and text training, making it effective for various vision-language tasks, particularly VQA, achieving competitive performance. You can use ViLT in HuggingFace as follows:
 ```python
 from transformers import ViltProcessor, ViltForQuestionAnswering
 import requests
