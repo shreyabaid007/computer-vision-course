@@ -5,16 +5,15 @@ Autoencoders are a class of neural networks primarily used for unsupervised lear
 * **Encoder:** The encoder is responsible for transforming the input data into a compressed or latent representation. It typically consists of one or more layers of neurons that progressively reduce the dimensions of the input.
 * **Decoder:** The decoder, on the other hand, takes the compressed representation produced by the encoder and attempts to reconstruct the original input data. Like the encoder, it often consists of one or more layers, but in the reverse order, gradually increasing the dimensions.
 
-![Vanilla Autoencoder Image - Lilian Weng Blog](https://huggingface.co/datasets/hf-vision/course-assets/resolve/main/generative_models/autoencoder.png)
+![Vanilla Autoencoder Image](https://huggingface.co/datasets/hf-vision/course-assets/resolve/main/generative_models/autoencoder.png)
 
 This encoder model consists of an encoder network (represented as $g_\phi$) and a decoder network (represented as $f_\theta$). The low-dimensional representation is learned in the bottleneck layer as $z$, and the reconstructed output is represented as $x' = f_\theta(g_\phi(x))$ with the goal of $x \approx x'$.
 
-A common loss function used in such vanilla autoencoders is 
+A common loss function used in such vanilla autoencoders is:
 
-$$L(\theta, \phi) = \frac{1}{n}\sum_{i=1}^n (\mathbf{x}^{(i)} - f_\theta(g_\phi(\mathbf{x}^{(i)})))^2$$ 
+$$L(\theta, \phi) = \frac{1}{n}\sum_{i=1}^n (\mathbf{x}^{(i)} - f_\theta(g_\phi(\mathbf{x}^{(i)})))^2$$
 
 which tries to minimize the error between the original image and the reconstructed one. This is also known as the `reconstruction loss`.
-
 
 Autoencoders are useful for tasks such as data denoising, feature learning, and compression. However, traditional autoencoders lack the probabilistic nature that makes VAEs particularly intriguing and also useful for generational tasks.
 
