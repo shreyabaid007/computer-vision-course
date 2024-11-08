@@ -7,11 +7,11 @@ Autoencoders are a class of neural networks primarily used for unsupervised lear
 
 ![Vanilla Autoencoder Image](https://huggingface.co/datasets/hf-vision/course-assets/resolve/main/generative_models/autoencoder.png)
 
-This encoder model consists of an encoder network (represented as $g_\phi$) and a decoder network (represented as $f_\theta$). The low-dimensional representation is learned in the bottleneck layer as $z$, and the reconstructed output is represented as $x' = f_\theta(g_\phi(x))$ with the goal of $x \approx x'$.
+This encoder model consists of an encoder network (represented as `gφ`) and a decoder network (represented as `fθ`). The low-dimensional representation is learned in the bottleneck layer as `z`, and the reconstructed output is represented as `x' = fθ(gφ(x))` with the goal of `x ≈ x'`.
 
 A common loss function used in such vanilla autoencoders is:
 
-$$L(\theta, \phi) = \frac{1}{n}\sum_{i=1}^n (\mathbf{x}^{(i)} - f_\theta(g_\phi(\mathbf{x}^{(i)})))^2$$
+`L(θ, φ) = (1/n) Σ (x^(i) - fθ(gφ(x^(i))))^2`
 
 which tries to minimize the error between the original image and the reconstructed one. This is also known as the `reconstruction loss`.
 
